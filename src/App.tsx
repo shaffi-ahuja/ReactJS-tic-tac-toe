@@ -20,6 +20,8 @@ export default function Board() {
 
 
   const handleClick = (i: number) => {
+    if (squares[i]) // to prevent overwriting of O with Xon square click and vice versa
+      return;
     const nextSquares = squares.slice();
     nextSquares[i] = xIsNext ? 'X' : 'O';
     setSquares(nextSquares);
